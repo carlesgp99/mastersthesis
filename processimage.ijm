@@ -1,0 +1,14 @@
+rename("nuclei");
+run("Split Channels");
+selectImage("C2-nuclei");
+selectImage("C1-nuclei");
+close();
+//run("Brightness/Contrast...");
+run("Enhance Contrast", "saturated=0.35");
+selectImage("C3-nuclei");
+run("Enhance Contrast", "saturated=0.35");
+selectImage("C2-nuclei");
+run("Red");
+selectImage("C3-nuclei");
+run("Green");
+run("Merge Channels...", "c1=C2-nuclei c2=C3-nuclei create");
